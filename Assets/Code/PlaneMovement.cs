@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlaneMovement : MonoBehaviour
 {
     public float PlaneSpeed = 25f;
-    public string VerticalAxis;
-    public string HorizontalAxis;
+    
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +17,14 @@ public class PlaneMovement : MonoBehaviour
     void Update()
     {
        
-        float VerticalMovement = Input.GetAxis(VerticalAxis);
-        rb.velocity = new Vector2(0f, VerticalMovement) * PlaneSpeed;
+        float VerticalMovement = Input.GetAxis("Vertical");
+        float HorizontalMovement = Input.GetAxis("Horizontal");
 
-        float HorizontalMovement = Input.GetAxis(HorizontalAxis);
-        rb.velocity = new Vector2(HorizontalMovement, 0f) * PlaneSpeed;
+
+       Vector2 velocidad = new Vector2(HorizontalMovement, VerticalMovement).normalized * PlaneSpeed;
+        rb.velocity = velocidad;
+
+       
     }
     
 }

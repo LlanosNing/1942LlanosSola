@@ -1032,9 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24593bb2e7e2377448ebea48629da6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaneSpeed: 25
-  VerticalAxis: Vertical
-  HorizontalAxis: Horizontal
+  PlaneSpeed: 40
   rb: {fileID: 812466482}
 --- !u!50 &812466482
 Rigidbody2D:
